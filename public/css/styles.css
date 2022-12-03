@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: #EEEEEE;
+    background-color: #1C0A00;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 135px;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+.list-section {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.main-wrapper {
+    position: absolute;
+    left: 100px;
+    width: 100%;
+    height: auto;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.create-task-container, .description-container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.input-container-wrapper {
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    width: 360px;
+    height: auto;
+}
+
+.input-container {
+    display: inline-flex;
+    position: absolute;
+    top: 20px;
+    left: 160px;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+}
+
+label, input, textarea {
+    margin: 5px;
+}
+
+.view-task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background-color: #361500;
+    border: 2px solid #603601;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #361500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+
+h4 {
+    background-color: #361500;
+}
+
+li {
+    margin: 5px;
+    width: auto;
+    height: auto;
+    list-style: none;
+}
+
+button {
+    color: #1C0A00;
+    cursor: pointer;
+    background-color: #EEEEEE;
+    width: 100px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+span {
+    width: auto;
+    height: auto;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.li-container {
+    width: auto;
+    height: auto;
+}
+
+.element-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border-top: 1px solid #CC9544;
+    border-bottom: 1px solid #CC9544;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.row-description {
+    display: flex;
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+}
+
+.ol-column, .date-column {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 1px;
+}
+
+.date-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-column span {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.btn-wrapper {
+    overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    height: 25px;
+    width: auto;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+          -webkit-tap-highlight-color: transparent;
+}
+  
+button {
+      width: 100px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      background: red;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+      background: #e62222;
+}
+  
+button, button span {
+      transition: 200ms;
+}
+  
+button .text {
+      transform: translateX(35px);
+      color: white;
+      font-weight: bold;
+}
+  
+button .icon {
+      position: absolute;
+      border-left: 1px solid #c41b1b;
+      transform: translateX(80px);
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+  
+button svg {
+      width: 15px;
+      fill: #eee;
+}
+  
+button:hover {
+      background: #ff3636;
+}
+  
+button:hover .text {
+      color: transparent;
+}
+  
+button:hover .icon {
+      width: 100px;
+      border-left: none;
+      transform: translateX(0);
+}
+  
+button:focus {
+      outline: none;
+}
+
+#form-submit {
+    width: 80px;
+    height: 30px;
+    font-size: 1.05em;
+    background-color:lightslategray;
+    border: 2px solid black;
+    cursor: pointer;
+}
+ 
+#form-submit:hover {
+    background-color: #CC9544;
+}
+
+#task-description {
+    height: 80px;
+    width: 300px;
+    resize: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: red;
+}
+
+.not {
+    display:inline-block;
+    padding-bottom:2px;
+    border-bottom: 1px solid chartreuse;
+    width: auto;
+    height: auto;
+}
+
+/* 
+    https://colorhunt.co/palette/1c0a00361500603601cc9544
+
+    darkest #1C0A00
+    dark #361500
+    light #603601
+    lightest #CC9544
+
+*/

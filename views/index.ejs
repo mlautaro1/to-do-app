@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>To Do Task List</h1><br>
+            <h5>This app is a CRUD practice app using MVC architecture.</h5><br>
+            <h5>
+                Built with Node/Express.js, HTML, CSS, Javascript, EJS, Mongodb/Mongoose
+            </h5>  
+        </div>
+    </header>
+    <section class="content-wrapper">
+        <div class="input-container-wrapper">
+            <div class="input-container">
+                <form  action="/todos/createTodo" method="post" name="tasks-form" id="tasks-form">
+                    <div class="create-task-container">          
+                        <label class="form-label" for="createTask" form="tasks-form"><b>Create</b> new task</label>
+                        <input class="form-input" type="text" name="createTask" id="create-task" placeholder="Task title">
+                    </div>
+                    <div class="description-container">
+                        <label class="form-label" for="taskDescription" form="tasks-form">Description</label>
+                        <textarea name="taskDescription" id="taskDescription" 
+                        form="tasks-form" maxlength="150"
+                        placeholder="Max 150 characters"
+                        wrap="hard"
+                        ></textarea>
+                    </div>
+                    <input type="submit" id="form-submit">
+                </form>
+            </div>
+        </div>
+        <section class="list-section">
+            <div class="main-wrapper">
+                <main>
+                    <div class="view-task-container">
+                        <section class="wrapper">
+                            <h4>My list of tasks</h4>
+                        </section>
+                        <section class="todos-list">
+                            <ul>
+                                <% todos.forEach(element => { %>
+                                    <div class="element-wrapper">
+                                        <div class="row">
+                                            <div class="task-column">
+                                                    <div class="li-container">
+                                                        <li data-id="<%=element._id%>">
+                                                            <input id="<%= element._id %>" type="checkbox" class="checkbox">
+                                                            <label for="<%=element._id%>" class='<%= element.completed === true ? 'completed' : 'not'%>'><%=element.todo%></label>
+                                                        </li>
+                                                    </div>
+                                            </div>
+                                            <div class="date-column">
+                                                <span>Date Added:</span>
+                                                <span><%= element.dateCreated %></span>
+                                            </div>
+                                            <div class="btn-wrapper">
+                                                <button class="noselect">
+                                                    <span class='text'>Delete</span>
+                                                    <span class="icon" id="<%=element._id%>">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                            <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- End of 1st row -->
+                                        <section class="row-description">
+                                            <span>Description: </span>
+                                            <span style="margin-left: 10px;"><%= element.description %></span>
+                                        </section>
+                                         <!-- End of 1st row description -->
+                                    </div>
+                                    <% }) %>
+                            </ul>              
+                        </section>                          
+                    </div>
+                </main>
+            </div>
+        </section>
+    </section>
+    <script src="js/main.js"></script> 
+</body>
+</html>
+
+<!-- 
+<input id="elementid">" type="checkbox" name="checkbox" value="1">
+-->
